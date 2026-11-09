@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://clxmxou6p7yha"]
 
 [ext_resource type="Script" uid="uid://cw10sxox17rrl" path="res://scripts/receiver.gd" id="1_kv14v"]
-[ext_resource type="Texture2D" uid="uid://35emguqfn8xi" path="res://resourses/textures/ReceiverTest.png" id="1_w3ywi"]
+[ext_resource type="Texture2D" uid="uid://ucxtddcckx74" path="res://resourses/textures/Receiver1.png" id="2_kv14v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3ywi"]
-size = Vector2(32, 32)
+size = Vector2(18, 26)
 
 [node name="Receiver" type="Area2D" unique_id=1816436703 groups=["Receivers"]]
 script = ExtResource("1_kv14v")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1945101232]
 texture_filter = 1
-texture = ExtResource("1_w3ywi")
+texture = ExtResource("2_kv14v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1623736841]
+position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_w3ywi")

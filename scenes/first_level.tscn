@@ -1,21 +1,29 @@
 [gd_scene format=3 uid="uid://qv0njjb84inx"]
 
 [ext_resource type="PackedScene" uid="uid://bvobrmgqo0ohq" path="res://scenes/light_emitter.tscn" id="1_imgkl"]
+[ext_resource type="Script" uid="uid://c81pk8pxvsgx6" path="res://scripts/level.gd" id="1_qedf2"]
 [ext_resource type="PackedScene" uid="uid://d3nv1qfjpb30i" path="res://scenes/mirror.tscn" id="1_tqy6i"]
 [ext_resource type="PackedScene" uid="uid://clxmxou6p7yha" path="res://scenes/receiver.tscn" id="3_7pb34"]
+[ext_resource type="Texture2D" uid="uid://ucxtddcckx74" path="res://resourses/textures/Receiver1.png" id="4_ab8ao"]
 [ext_resource type="PackedScene" uid="uid://d3rprupdlvden" path="res://scenes/player.tscn" id="4_snglc"]
 [ext_resource type="PackedScene" uid="uid://durns2o4cu2s" path="res://scenes/sun.tscn" id="5_385i6"]
+[ext_resource type="Texture2D" uid="uid://dl6n4wxdfgqim" path="res://resourses/textures/Receiver2.png" id="5_m5da8"]
+[ext_resource type="Texture2D" uid="uid://b047dyd6nv7wq" path="res://resourses/textures/Receiver3.png" id="6_3641t"]
 [ext_resource type="PackedScene" uid="uid://vv4nfhao64qy" path="res://scenes/shadow_object.tscn" id="6_qndhv"]
 
 [node name="Main" type="Node2D" unique_id=1705535659]
+script = ExtResource("1_qedf2")
+change_scene = "uid://dqimvh2cicbho"
 
 [node name="LightEmitter" parent="." unique_id=1134790195 instance=ExtResource("1_imgkl")]
-position = Vector2(100, 300)
+position = Vector2(100, 325)
 
 [node name="Receiver" parent="." unique_id=1816436703 instance=ExtResource("3_7pb34")]
 position = Vector2(600, 500)
 scale = Vector2(2, 2)
-change_scene = "uid://dqimvh2cicbho"
+orange_texture = ExtResource("4_ab8ao")
+red_texture = ExtResource("5_m5da8")
+green_texture = ExtResource("6_3641t")
 
 [node name="Sun" parent="." unique_id=1799632974 instance=ExtResource("5_385i6")]
 position = Vector2(1100, 324)
@@ -29,7 +37,6 @@ scale = Vector2(0.49999997, 0.49999997)
 [node name="Mirror5" parent="Mirrors" unique_id=673973620 instance=ExtResource("1_tqy6i")]
 position = Vector2(400, 300)
 scale = Vector2(0.49999997, 0.49999997)
-move_speed = 100
 
 [node name="Mirror6" parent="Mirrors" unique_id=858645214 instance=ExtResource("1_tqy6i")]
 position = Vector2(600, 300)
@@ -40,6 +47,7 @@ position = Vector2(490, 100)
 scale = Vector2(0.49999997, 0.49999997)
 movable = true
 move_axis = Vector2(1, 0)
+move_speed = 100
 
 [node name="Mirror3" parent="Mirrors" unique_id=1476054710 instance=ExtResource("1_tqy6i")]
 position = Vector2(900, 50)

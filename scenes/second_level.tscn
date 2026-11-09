@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://kccr5l60h5gv"]
+
+[ext_resource type="Script" uid="uid://c81pk8pxvsgx6" path="res://scripts/level.gd" id="1_h3rs1"]
+[ext_resource type="PackedScene" uid="uid://bvobrmgqo0ohq" path="res://scenes/light_emitter.tscn" id="1_k6ckt"]
+[ext_resource type="PackedScene" uid="uid://d3nv1qfjpb30i" path="res://scenes/mirror.tscn" id="2_hfe2k"]
+[ext_resource type="PackedScene" uid="uid://d3rprupdlvden" path="res://scenes/player.tscn" id="3_aw0oj"]
+[ext_resource type="PackedScene" uid="uid://clxmxou6p7yha" path="res://scenes/receiver.tscn" id="4_f6rwo"]
+[ext_resource type="Texture2D" uid="uid://ucxtddcckx74" path="res://resourses/textures/Receiver1.png" id="5_5mjjg"]
+[ext_resource type="Texture2D" uid="uid://dl6n4wxdfgqim" path="res://resourses/textures/Receiver2.png" id="6_h3rs1"]
+[ext_resource type="Texture2D" uid="uid://b047dyd6nv7wq" path="res://resourses/textures/Receiver3.png" id="7_5k5cp"]
+[ext_resource type="PackedScene" uid="uid://durns2o4cu2s" path="res://scenes/sun.tscn" id="9_5k5cp"]
+[ext_resource type="PackedScene" uid="uid://vv4nfhao64qy" path="res://scenes/shadow_object.tscn" id="10_fpriq"]
+
+[node name="Main" type="Node2D" unique_id=236939577]
+script = ExtResource("1_h3rs1")
+change_scene = "uid://dqimvh2cicbho"
+
+[node name="LightEmitter" parent="." unique_id=1134790195 instance=ExtResource("1_k6ckt")]
+position = Vector2(350, 500)
+
+[node name="LightEmitter2" parent="." unique_id=2018597625 instance=ExtResource("1_k6ckt")]
+position = Vector2(350, 350)
+
+[node name="Receiver" parent="." unique_id=1816436703 instance=ExtResource("4_f6rwo")]
+position = Vector2(850, 250)
+scale = Vector2(2, 2)
+orange_texture = ExtResource("5_5mjjg")
+red_texture = ExtResource("6_h3rs1")
+green_texture = ExtResource("7_5k5cp")
+
+[node name="Receiver2" parent="." unique_id=1457265718 instance=ExtResource("4_f6rwo")]
+position = Vector2(1100, 400)
+scale = Vector2(2, 2)
+orange_texture = ExtResource("5_5mjjg")
+red_texture = ExtResource("6_h3rs1")
+green_texture = ExtResource("7_5k5cp")
+receiver_type = 1
+
+[node name="Sun" parent="." unique_id=1799632974 instance=ExtResource("9_5k5cp")]
+position = Vector2(1148, 0)
+
+[node name="ShadowObjects" type="Node2D" parent="." unique_id=1932841182]
+
+[node name="ShadowObject" parent="ShadowObjects" unique_id=579023843 instance=ExtResource("10_fpriq")]
+position = Vector2(500, 375)
+scale = Vector2(4, 4)
+
+[node name="ShadowObject2" parent="ShadowObjects" unique_id=1342324979 instance=ExtResource("10_fpriq")]
+position = Vector2(725, 550)
+scale = Vector2(4, 4)
+
+[node name="ShadowObject3" parent="ShadowObjects" unique_id=1395328798 instance=ExtResource("10_fpriq")]
+position = Vector2(250, 300)
+scale = Vector2(5, 5)
+
+[node name="ShadowObject4" parent="ShadowObjects" unique_id=249515965 instance=ExtResource("10_fpriq")]
+position = Vector2(550, 100)
+scale = Vector2(7, 7)
+
+[node name="ShadowObject6" parent="ShadowObjects" unique_id=737111755 instance=ExtResource("10_fpriq")]
+position = Vector2(900, 375)
+scale = Vector2(5, 5)
+
+[node name="Player" parent="." unique_id=550045800 instance=ExtResource("3_aw0oj")]
+position = Vector2(400, 400)
+scale = Vector2(2, 2)
+
+[node name="Mirrors" type="Node2D" parent="." unique_id=1931288756]
+
+[node name="Mirror" parent="Mirrors" unique_id=858645214 instance=ExtResource("2_hfe2k")]
+position = Vector2(600, 475)
+rotation = -0.7853982
+scale = Vector2(0.5, 0.5)
+movable = true
+move_axis = Vector2(1, 0)
+move_speed = 100
+
+[node name="Mirror2" parent="Mirrors" unique_id=36521749 instance=ExtResource("2_hfe2k")]
+position = Vector2(490, 600)
+scale = Vector2(0.5, 0.5)
+
+[node name="Mirror3" parent="Mirrors" unique_id=179787463 instance=ExtResource("2_hfe2k")]
+position = Vector2(100, 600)
+rotation = -0.7853982
+scale = Vector2(0.5, 0.5)
+
+[node name="Mirror4" parent="Mirrors" unique_id=962047598 instance=ExtResource("2_hfe2k")]
+position = Vector2(100, 325)
+scale = Vector2(0.5, 0.5)
+movable = true
+move_speed = 100
+
+[node name="Mirror5" parent="Mirrors" unique_id=1214215122 instance=ExtResource("2_hfe2k")]
+position = Vector2(750, 325)
+scale = Vector2(0.49999997, 0.49999997)
+
+[node name="Mirror6" parent="Mirrors" unique_id=142897073 instance=ExtResource("2_hfe2k")]
+position = Vector2(750, 100)
+scale = Vector2(0.49999997, 0.49999997)
+
+[node name="Mirror7" parent="Mirrors" unique_id=653934878 instance=ExtResource("2_hfe2k")]
+position = Vector2(1000, 200)
+rotation = -0.7853982
+scale = Vector2(0.49999997, 0.49999997)
+movable = true
+move_speed = 100
+
+[node name="Mirror8" parent="Mirrors" unique_id=720681782 instance=ExtResource("2_hfe2k")]
+position = Vector2(1000, 500)
+rotation = -0.7853982
+scale = Vector2(0.49999997, 0.49999997)
+movable = true
+move_speed = 100
