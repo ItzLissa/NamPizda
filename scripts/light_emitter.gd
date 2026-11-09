@@ -2,15 +2,16 @@ extends Node2D
 
 @onready var ray = $RayCast2D
 @onready var line = $Line2D
+@onready var emitter_point = $Marker2D
 
 func _process(_delta):
 	var exclude = []
 	line.clear_points() #удаление старой линии
 	var points = []
-	var start = Vector2.ZERO
-	var direction = ray.target_position.normalized()
-	points.append(start)
-	var current_position=global_position
+	var start = emitter_point.global_position
+	var direction = Vector2.RIGHT.rotated(rotation)
+	points.append(to_local(start))
+	var current_position=start
 	for i in range(25):
 		var space = get_world_2d().direct_space_state
 		var query = PhysicsRayQueryParameters2D.create(current_position,current_position+direction*1000)
