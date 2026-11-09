@@ -45,7 +45,6 @@ var dialogue_line: DialogueLine:
 			apply_dialogue_line()
 		else:
 			# The dialogue has finished so close the balloon
-			Global.player_active = true
 			if owner == null:
 				queue_free()
 			else:

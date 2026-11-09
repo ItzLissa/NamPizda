@@ -24,14 +24,17 @@ func _ready():
 	if suns.size()>0:
 		sun = suns[0]
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("up"):
-		up_move()
-	elif Input.is_action_pressed("down"):
-		down_move()
-	elif Input.is_action_pressed("left"):
-		left_move()
-	elif Input.is_action_pressed("right"):
-		right_move()
+	if GlobalAnton.player_active:
+		if Input.is_action_pressed("up"):
+			up_move()
+		elif Input.is_action_pressed("down"):
+			down_move()
+		elif Input.is_action_pressed("left"):
+			left_move()
+		elif Input.is_action_pressed("right"):
+			right_move()
+		else:
+			idle()
 	else:
 		idle()
 	

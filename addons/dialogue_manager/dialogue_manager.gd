@@ -712,6 +712,7 @@ func _bridge_get_next_dialogue_line(call_id: int, resource: DialogueResource, ke
 	bridge_get_next_dialogue_line_completed.emit(call_id, line)
 	if line == null:
 		# End the conversation
+		GlobalAnton.player_active = true
 		dialogue_ended.emit(resource)
 
 
