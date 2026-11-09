@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://qv0njjb84inx"]
+
+[ext_resource type="PackedScene" uid="uid://bvobrmgqo0ohq" path="res://scenes/light_emitter.tscn" id="1_imgkl"]
+[ext_resource type="PackedScene" uid="uid://d3nv1qfjpb30i" path="res://scenes/mirror.tscn" id="1_tqy6i"]
+[ext_resource type="PackedScene" uid="uid://clxmxou6p7yha" path="res://scenes/receiver.tscn" id="3_7pb34"]
+[ext_resource type="PackedScene" uid="uid://d3rprupdlvden" path="res://scenes/player.tscn" id="4_snglc"]
+[ext_resource type="PackedScene" uid="uid://durns2o4cu2s" path="res://scenes/sun.tscn" id="5_385i6"]
+[ext_resource type="PackedScene" uid="uid://vv4nfhao64qy" path="res://scenes/shadow_object.tscn" id="6_qndhv"]
+
+[node name="Main" type="Node2D" unique_id=1705535659]
+
+[node name="LightEmitter" parent="." unique_id=1134790195 instance=ExtResource("1_imgkl")]
+position = Vector2(100, 300)
+
+[node name="Receiver" parent="." unique_id=1816436703 instance=ExtResource("3_7pb34")]
+position = Vector2(600, 500)
+scale = Vector2(2, 2)
+change_scene = "uid://dqimvh2cicbho"
+
+[node name="Sun" parent="." unique_id=1799632974 instance=ExtResource("5_385i6")]
+position = Vector2(1100, 324)
+
+[node name="Mirrors" type="Node2D" parent="." unique_id=1624611586]
+
+[node name="Mirror4" parent="Mirrors" unique_id=1662348757 instance=ExtResource("1_tqy6i")]
+position = Vector2(900, 300)
+scale = Vector2(0.49999997, 0.49999997)
+
+[node name="Mirror5" parent="Mirrors" unique_id=673973620 instance=ExtResource("1_tqy6i")]
+position = Vector2(400, 300)
+scale = Vector2(0.49999997, 0.49999997)
+move_speed = 100
+
+[node name="Mirror6" parent="Mirrors" unique_id=858645214 instance=ExtResource("1_tqy6i")]
+position = Vector2(600, 300)
+scale = Vector2(0.49999997, 0.49999997)
+
+[node name="Mirror2" parent="Mirrors" unique_id=514518675 instance=ExtResource("1_tqy6i")]
+position = Vector2(490, 100)
+scale = Vector2(0.49999997, 0.49999997)
+movable = true
+move_axis = Vector2(1, 0)
+
+[node name="Mirror3" parent="Mirrors" unique_id=1476054710 instance=ExtResource("1_tqy6i")]
+position = Vector2(900, 50)
+rotation = -0.7853982
+scale = Vector2(0.49999997, 0.49999997)
+movable = true
+move_speed = 100
+
+[node name="Player" parent="." unique_id=550045800 groups=["player"] instance=ExtResource("4_snglc")]
+position = Vector2(640, 78)
+scale = Vector2(2, 2)
+
+[node name="ShadowObjects" type="Node2D" parent="." unique_id=1373502910]
+
+[node name="ShadowObject" parent="ShadowObjects" unique_id=579023843 instance=ExtResource("6_qndhv")]
+position = Vector2(550, 200)
+scale = Vector2(6, 6)
+
+[node name="ShadowObject3" parent="ShadowObjects" unique_id=1988738681 instance=ExtResource("6_qndhv")]
+position = Vector2(1000, 500)
+scale = Vector2(8, 8)
+
+[node name="ShadowObject2" parent="ShadowObjects" unique_id=1407398402 instance=ExtResource("6_qndhv")]
+position = Vector2(450, 500)
+scale = Vector2(5, 5)

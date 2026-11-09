@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://durns2o4cu2s"]
+
+[ext_resource type="Script" uid="uid://bb00ieh7vhbri" path="res://scripts/sun.gd" id="1_cojbh"]
+
+[node name="Sun" type="Node2D" unique_id=1799632974 groups=["Sun"]]
+script = ExtResource("1_cojbh")
+shadow_length = 250

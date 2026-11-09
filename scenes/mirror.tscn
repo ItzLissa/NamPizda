@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d3nv1qfjpb30i"]
+
+[ext_resource type="Texture2D" uid="uid://b5rfogc1iuk4b" path="res://resourses/textures/MirrorTest.png" id="1_5o7h0"]
+[ext_resource type="Script" uid="uid://bcdl3r3eiw50g" path="res://scripts/mirror.gd" id="1_652kc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5o7h0"]
+size = Vector2(32.526917, 31.996582)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_652kc"]
+
+[node name="Mirror" type="StaticBody2D" unique_id=858645214 groups=["Mirrors"]]
+rotation = 0.7853982
+script = ExtResource("1_652kc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=592589258]
+scale = Vector2(1, 4)
+texture = ExtResource("1_5o7h0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=434196748]
+position = Vector2(9.536743e-07, 0)
+scale = Vector2(1, 4)
+shape = SubResource("RectangleShape2D_5o7h0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1580268116]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=857308363]
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_652kc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_interaction_area_body_exited"]

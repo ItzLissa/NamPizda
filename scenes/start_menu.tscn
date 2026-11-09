@@ -1,0 +1,234 @@
+[gd_scene format=3 uid="uid://bmqbyrut8c7ts"]
+
+[ext_resource type="Script" uid="uid://ddyndmyn3iff1" path="res://scripts/start_menu.gd" id="1_h61rw"]
+[ext_resource type="Texture2D" uid="uid://bvdugh182c3bd" path="res://assets/atlas_menu/Untitled 11-07-2026 05-18-22.png" id="2_h61rw"]
+[ext_resource type="Texture2D" uid="uid://dokxe403ux6hx" path="res://assets/atlas_menu/man.png" id="2_qtu10"]
+[ext_resource type="Texture2D" uid="uid://0tcny8563gk8" path="res://assets/atlas_menu/луна.png" id="4_h61rw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gil1d"]
+texture = ExtResource("2_h61rw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h6q8d"]
+texture = ExtResource("2_qtu10")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6q8d"]
+bg_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.4, 0.4, 0.4, 1)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdgdc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fj5cn"]
+bg_color = Color(0.24115604, 0.24115604, 0.24115604, 0.011764706)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62e2m"]
+bg_color = Color(0.7411765, 0.84705883, 1, 0.5921569)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.03529412, 0.07058824, 0.07058824, 1)
+shadow_size = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_vdgdc"]
+color = Color(0, 0.41960785, 0.42352942, 0.827451)
+thickness = 8
+
+[node name="start_menu" type="Control" unique_id=208844068 node_paths=PackedStringArray("menu_buttons", "options")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h61rw")
+menu_buttons = NodePath("menu_buttons/menu_buttons_container/menu_buttons")
+options = NodePath("options")
+
+[node name="Panel" type="Panel" parent="." unique_id=130971730]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gil1d")
+
+[node name="Panel2" type="Panel" parent="." unique_id=195458891]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 6.0
+offset_right = 1152.0
+offset_bottom = 127.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_h6q8d")
+
+[node name="menu_buttons" type="TextureRect" parent="." unique_id=1683433209]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 467.0
+offset_top = 15.0
+offset_right = -34.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_h61rw")
+expand_mode = 2
+
+[node name="menu_buttons_container" type="MarginContainer" parent="menu_buttons" unique_id=1770596347]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -150.0
+offset_right = 250.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="menu_buttons" type="VBoxContainer" parent="menu_buttons/menu_buttons_container" unique_id=1963721454]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="start_game" type="Button" parent="menu_buttons/menu_buttons_container/menu_buttons" unique_id=485160622]
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_h6q8d")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdgdc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fj5cn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_62e2m")
+text = "НАЧАТЬ ИГРУ"
+
+[node name="settings" type="Button" parent="menu_buttons/menu_buttons_container/menu_buttons" unique_id=938762257]
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_h6q8d")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdgdc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fj5cn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_62e2m")
+text = "НАСТРОЙКИ"
+
+[node name="quit_button" type="Button" parent="menu_buttons/menu_buttons_container/menu_buttons" unique_id=1698276834]
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_h6q8d")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdgdc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fj5cn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_62e2m")
+text = "ВЫЙТИ"
+
+[node name="options" type="Panel" parent="." unique_id=1895984246]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -259.0
+offset_right = 550.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="options" unique_id=490489885]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_right = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="options/VBoxContainer" unique_id=1062202712]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "НАСТРОЙКИ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="volume_label" type="Label" parent="options/VBoxContainer" unique_id=985873329]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 20
+text = "ГРОМКОСТЬ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="volume" type="HSlider" parent="options/VBoxContainer" unique_id=1756826226]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_vdgdc")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="fullscreen" type="CheckBox" parent="options/VBoxContainer" unique_id=1749483778]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Fullscreen
+"
+
+[node name="resolution" type="OptionButton" parent="options/VBoxContainer" unique_id=797137682]
+layout_mode = 2
+selected = 2
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[node name="back" type="Button" parent="options/VBoxContainer" unique_id=1601887035]
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_h6q8d")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdgdc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fj5cn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_62e2m")
+text = "НАЗАД
+"
+
+[connection signal="pressed" from="menu_buttons/menu_buttons_container/menu_buttons/start_game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="menu_buttons/menu_buttons_container/menu_buttons/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="menu_buttons/menu_buttons_container/menu_buttons/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="options/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="options/VBoxContainer/fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="item_selected" from="options/VBoxContainer/resolution" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="options/VBoxContainer/back" to="." method="_on_back_pressed"]

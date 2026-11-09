@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://bp4fmxodu2ukc"]
+
+[ext_resource type="Texture2D" uid="uid://bxftlgbpg45d3" path="res://assets/atlas_menu/луна меню паузы.png" id="1_0fbet"]
+[ext_resource type="Texture2D" uid="uid://di4dels4nyiji" path="res://assets/atlas_menu/bg_menu.png" id="1_62e2m"]
+[ext_resource type="Script" uid="uid://ddyndmyn3iff1" path="res://scripts/start_menu.gd" id="1_h61rw"]
+[ext_resource type="Texture2D" uid="uid://dokxe403ux6hx" path="res://assets/atlas_menu/man.png" id="2_qtu10"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gil1d"]
+texture = ExtResource("1_62e2m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h6q8d"]
+texture = ExtResource("2_qtu10")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_es4n0"]
+color = Color(0.20786104, 0.2557059, 0.4284945, 1)
+thickness = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6q8d"]
+bg_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.4, 0.4, 0.4, 1)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdgdc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fj5cn"]
+bg_color = Color(0.24115604, 0.24115604, 0.24115604, 0.011764706)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62e2m"]
+bg_color = Color(0.7411765, 0.84705883, 1, 0.5921569)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.03529412, 0.07058824, 0.07058824, 1)
+shadow_size = 10
+
+[node name="settings" type="Control" unique_id=208844068]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h61rw")
+audio_bus_name = null
+
+[node name="Panel" type="Panel" parent="." unique_id=130971730]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gil1d")
+
+[node name="Panel2" type="Panel" parent="." unique_id=195458891]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 6.0
+offset_right = 1152.0
+offset_bottom = 127.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_h6q8d")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1683433209]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -133.0
+offset_right = 793.0
+offset_bottom = 291.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0fbet")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=1770596347]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -362.0
+offset_top = 257.5
+offset_right = 138.0
+offset_bottom = -455.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer" unique_id=1963721454]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=546926478]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 26
+text = "VOLUME"
+
+[node name="volume" type="HSlider" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=246839449]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_es4n0")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="fullscreen" type="CheckButton" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=2122033885]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/outline_size = 15
+theme_override_constants/h_separation = 30
+theme_override_font_sizes/font_size = 32
+text = "Fullscreen"
+expand_icon = true
+
+[node name="back" type="Button" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=1698276834]
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_h6q8d")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdgdc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fj5cn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_62e2m")
+text = "НАЗАД"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1385015317]
+
+[connection signal="value_changed" from="TextureRect/MarginContainer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="TextureRect/MarginContainer/VBoxContainer/fullscreen" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/back" to="." method="_on_back_pressed"]

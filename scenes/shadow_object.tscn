@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://vv4nfhao64qy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cpf2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62i73"]
+
+[node name="ShadowObject" type="Area2D" unique_id=579023843 groups=["ShadowObjects"]]
+
+[node name="ShadowObject" type="StaticBody2D" parent="." unique_id=1935281653 groups=["ShadowObjects"]]
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShadowObject" unique_id=1141662044]
+shape = SubResource("RectangleShape2D_0cpf2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=247128833]
+shape = SubResource("RectangleShape2D_62i73")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1341202447]
